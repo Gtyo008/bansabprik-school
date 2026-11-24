@@ -157,11 +157,11 @@ function safeLink(u) {
   u = String(u || "").trim();
   if (!u) return "";
   if (/^[a-z][a-z0-9+.-]*:/i.test(u)) return /^(https?|mailto|tel):/i.test(u) ? u : "";
-  if (/^(#|\/|\.)/.test(u)) return u;
+  if (/^(#|\/|\.)/.test(u) || /^[\w\-]+\.html?([?#].*)?$/i.test(u)) return u;
   return "https://" + u;
 }
 const isExt = (u) => /^https?:/i.test(u);
-let LINKS = [], ABOUT = [], QITEMS = [];
+let LINKS = [], ABOUT = [], QITEMS = [], INFO = [];
 function drawNav() {
   const wrap = $("#navWrap");
   wrap.querySelectorAll("a[data-custom]").forEach((a) => a.remove());
@@ -206,6 +206,10 @@ function richText(t) {
     else { if (list) { out += "</ul>"; list = false; } if (line.trim()) out += `<p>${esc(line.trim())}</p>`; }
   });
   return out + (list ? "</ul>" : "");
+}
+function drawInfo() {
+  $("#cExtra").innerHTML = INFO.filter((r) => String(r.label || "").trim() && String(r.value || "").trim())
+    .map((r) => `<dt>${esc(r.label)}</dt><dd>${esc(r.value)}</dd>`).join("");
 }
 function drawAbout() {
   const t = get("about_title") || "เกี่ยวกับโรงเรียน", off = get("about_show") === "ซ่อนทั้งส่วน";
@@ -275,7 +279,7 @@ function applySettings() {
   });
   setSlides(list);
   drawPeople();
-  drawNav(); drawQuick(); drawAbout();
+  drawNav(); drawQuick(); drawAbout(); drawInfo();
   applyTheme(SETTINGS);
 }
 
@@ -330,7 +334,7 @@ function applySite(data) {
   live = true; document.body.classList.add("live");
   SETTINGS = data.settings || {};
   NEWS = data.news || []; STAFF = data.staff || [];
-  LINKS = data.links || []; ABOUT = data.about || [];
+  LINKS = data.links || []; ABOUT = data.about || []; INFO = data.info || [];
   applySettings(); drawNews(); setDocs(data.docs || []);
 }
 const CACHE_KEY = "sp_site_v1";
