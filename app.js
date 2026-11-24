@@ -44,7 +44,7 @@ const DEF = {
   school_name: "โรงเรียนบ้านซับพริก", school_sub: "Ban Sap Phrik School · อำเภอมวกเหล็ก จังหวัดสระบุรี",
   ticker: "ประกาศปฏิทินการศึกษาภาคเรียนที่ 2 ปีการศึกษา 2569 ดูได้ที่ศูนย์เอกสาร",
   address: "โรงเรียนบ้านซับพริก อ.มวกเหล็ก จ.สระบุรี", phone: "0X-XXXX-XXXX", email: "example@school.ac.th", hours: "จันทร์ ถึง ศุกร์ 08.00 ถึง 16.30 น.",
-  dir_name: "ชื่อ-สกุล", dir_role: "ผู้อำนวยการโรงเรียน", dep_name: "ชื่อ-สกุล", dep_role: "รองผู้อำนวยการโรงเรียน",
+  dir_name: "ชื่อ-สกุล", dir_role: "ผู้อำนวยการโรงเรียน", dep_name: "ชื่อ-สกุล", dep_role: "รองผู้อำนวยการโรงเรียน", footer_note: "สังกัด สพป.สระบุรี เขต 2", footer_copy: "",
   slide1_tag: "ประกาศ", slide1_title: "ยินดีต้อนรับสู่เว็บไซต์โรงเรียนบ้านซับพริก", slide1_text: "ข่าวสาร เอกสาร และบริการของโรงเรียน รวมไว้ที่เดียว",
   slide2_tag: "ศูนย์เอกสาร", slide2_title: "เปิดอ่านเอกสารออนไลน์ได้ทันที", slide2_text: "ตารางเรียน ประกาศ และแบบฟอร์ม ค้นหาและดูได้โดยไม่ต้องดาวน์โหลด",
   slide3_tag: "กิจกรรม", slide3_title: "ติดตามกิจกรรมของนักเรียนและคณะครู", slide3_text: "ภาพและข่าวกิจกรรมล่าสุดจากโรงเรียน"
@@ -262,7 +262,8 @@ function applySettings() {
   $("#schoolSub").hidden = !get("school_sub");
   $("#fName").textContent = name;
   $("#fAddr").textContent = get("address");
-  $("#fCopy").textContent = `© ${new Date().getFullYear() + 543} ${name} สงวนลิขสิทธิ์`;
+  $("#fNote").textContent = get("footer_note");
+  $("#fCopy").textContent = get("footer_copy") || `© ${new Date().getFullYear() + 543} ${name} สงวนลิขสิทธิ์`;
   $("#tickerText").textContent = get("ticker");
   $("#ticker").hidden = !get("ticker");
   $("#cAddr").textContent = get("address");
