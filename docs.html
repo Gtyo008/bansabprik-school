@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>โรงเรียนบ้านซับพริก</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mitr:wght@400;500&family=Sarabun:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="docs" data-title="ศูนย์เอกสาร">
+<div class="util">
+  <div class="wrap">
+    <span id="today"></span>
+    <div class="right">
+      <div class="fsz" role="group" aria-label="ขนาดตัวอักษร">
+        <button type="button" data-fs="-1" aria-label="ลดขนาดตัวอักษร">ก-</button>
+        <button type="button" data-fs="0" aria-label="ขนาดปกติ">ก</button>
+        <button type="button" data-fs="1" aria-label="เพิ่มขนาดตัวอักษร">ก+</button>
+      </div>
+      <form class="search" id="gsearch" role="search">
+        <input id="gq" type="search" placeholder="ค้นหาเอกสาร" aria-label="ค้นหาเอกสาร">
+        <button type="submit">ค้นหา</button>
+      </form>
+      <a class="login" href="contact.html">เข้าสู่ระบบครู</a>
+    </div>
+  </div>
+</div>
+
+<header class="brandbar">
+  <div class="wrap">
+    <span class="crest" id="crest" aria-hidden="true">ซ</span>
+    <div>
+      <h1 id="schoolName">โรงเรียนบ้านซับพริก</h1>
+      <p id="schoolSub">Ban Sap Phrik School · อำเภอมวกเหล็ก จังหวัดสระบุรี</p>
+    </div>
+  </div>
+</header>
+
+<nav class="nav" aria-label="เมนูหลัก">
+  <div class="wrap" id="navWrap">
+    <a href="index.html">หน้าแรก</a>
+    <a href="about.html">เกี่ยวกับโรงเรียน</a>
+    <a href="news.html">ข่าวสาร</a>
+    <a class="on" href="docs.html">ศูนย์เอกสาร</a>
+    <a href="staff.html">บุคลากร</a>
+    <a href="contact.html">ติดต่อเรา</a>
+  </div>
+</nav>
+
+<main class="wrap" id="top">
+  <section id="docs">
+    <div class="sec-title"><h2>ศูนย์รวมเอกสาร</h2><span class="sample">รายการตัวอย่าง</span></div>
+    <div class="docs">
+      <div class="docs-tools">
+        <input id="q" type="search" placeholder="ค้นหาเอกสาร เช่น ตารางเรียน" aria-label="ค้นหาเอกสาร">
+        <div class="chips" id="chips" role="group" aria-label="กรองตามหมวด"></div>
+      </div>
+      <div class="docs-body">
+        <ul class="list" id="list"></ul>
+        <div class="preview" id="preview"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><h4 id="fName">โรงเรียนบ้านซับพริก</h4><p id="fAddr">อำเภอมวกเหล็ก จังหวัดสระบุรี</p><p>สังกัด สพป.สระบุรี เขต 2</p></div>
+    <div><h4>เมนู</h4><a href="news.html">ข่าวสาร</a><a href="docs.html">ศูนย์เอกสาร</a><a href="staff.html">บุคลากร</a></div>
+    <div><h4>ติดต่อ</h4><p id="fPhone">0X-XXXX-XXXX</p><p id="fEmail">example@school.ac.th</p></div>
+    <div class="copy" id="fCopy">© 2569 โรงเรียนบ้านซับพริก สงวนลิขสิทธิ์</div>
+  </div>
+</footer>
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

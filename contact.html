@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>โรงเรียนบ้านซับพริก</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mitr:wght@400;500&family=Sarabun:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-page="contact" data-title="ติดต่อเรา">
+<div class="util">
+  <div class="wrap">
+    <span id="today"></span>
+    <div class="right">
+      <div class="fsz" role="group" aria-label="ขนาดตัวอักษร">
+        <button type="button" data-fs="-1" aria-label="ลดขนาดตัวอักษร">ก-</button>
+        <button type="button" data-fs="0" aria-label="ขนาดปกติ">ก</button>
+        <button type="button" data-fs="1" aria-label="เพิ่มขนาดตัวอักษร">ก+</button>
+      </div>
+      <form class="search" id="gsearch" role="search">
+        <input id="gq" type="search" placeholder="ค้นหาเอกสาร" aria-label="ค้นหาเอกสาร">
+        <button type="submit">ค้นหา</button>
+      </form>
+      <a class="login" href="contact.html">เข้าสู่ระบบครู</a>
+    </div>
+  </div>
+</div>
+
+<header class="brandbar">
+  <div class="wrap">
+    <span class="crest" id="crest" aria-hidden="true">ซ</span>
+    <div>
+      <h1 id="schoolName">โรงเรียนบ้านซับพริก</h1>
+      <p id="schoolSub">Ban Sap Phrik School · อำเภอมวกเหล็ก จังหวัดสระบุรี</p>
+    </div>
+  </div>
+</header>
+
+<nav class="nav" aria-label="เมนูหลัก">
+  <div class="wrap" id="navWrap">
+    <a href="index.html">หน้าแรก</a>
+    <a href="about.html">เกี่ยวกับโรงเรียน</a>
+    <a href="news.html">ข่าวสาร</a>
+    <a href="docs.html">ศูนย์เอกสาร</a>
+    <a href="staff.html">บุคลากร</a>
+    <a class="on" href="contact.html">ติดต่อเรา</a>
+  </div>
+</nav>
+
+<main class="wrap" id="top">
+  <section id="contact">
+    <div class="sec-title"><h2>ติดต่อเรา</h2></div>
+    <div class="contact">
+      <div class="card">
+        <h3>ข้อมูลติดต่อ</h3>
+        <dl>
+          <dt>ที่อยู่</dt><dd id="cAddr">โรงเรียนบ้านซับพริก อ.มวกเหล็ก จ.สระบุรี</dd>
+          <dt>โทรศัพท์</dt><dd id="cPhone">0X-XXXX-XXXX</dd>
+          <dt>อีเมล</dt><dd id="cEmail">example@school.ac.th</dd>
+          <dt>เวลาทำการ</dt><dd id="cHours">จันทร์ ถึง ศุกร์ 08.00 ถึง 16.30 น.</dd>
+        </dl>
+      </div>
+      <form class="card" id="f">
+        <h3>ส่งข้อความถึงโรงเรียน</h3>
+        <input id="fn" placeholder="ชื่อของคุณ" aria-label="ชื่อของคุณ" required>
+        <textarea id="fm" rows="3" placeholder="ข้อความ" aria-label="ข้อความ" required></textarea>
+        <button type="submit">ส่งข้อความ</button>
+        <p id="sent" hidden>ขอบคุณครับ ตัวอย่างนี้ยังไม่ได้ส่งข้อความจริง ต้องเชื่อมกับ Google Sheets ก่อน</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><h4 id="fName">โรงเรียนบ้านซับพริก</h4><p id="fAddr">อำเภอมวกเหล็ก จังหวัดสระบุรี</p><p>สังกัด สพป.สระบุรี เขต 2</p></div>
+    <div><h4>เมนู</h4><a href="news.html">ข่าวสาร</a><a href="docs.html">ศูนย์เอกสาร</a><a href="staff.html">บุคลากร</a></div>
+    <div><h4>ติดต่อ</h4><p id="fPhone">0X-XXXX-XXXX</p><p id="fEmail">example@school.ac.th</p></div>
+    <div class="copy" id="fCopy">© 2569 โรงเรียนบ้านซับพริก สงวนลิขสิทธิ์</div>
+  </div>
+</footer>
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
